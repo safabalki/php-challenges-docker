@@ -1,0 +1,13 @@
+version: '3'
+services:
+
+    web:
+      image: nginx:latest
+      ports:
+        - "8080:80"
+      volumes:
+        - ./nginx/app.conf:/etc/nginx/nginx.conf
+    php:
+      image: php:7.3-fpm
+      volumes: 
+        - ./public:/var/www
